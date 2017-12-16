@@ -1,10 +1,10 @@
-Application C permettant la compression et la décompression de fichier
-en utilisant l’algorithme de Huffman avec un archiveur en python
+**Application C permettant la compression et la décompression de fichier
+en utilisant l’algorithme de Huffman avec un archiveur en python**
 
 # Utilisation
 ## Prérequis
 ### Makefile
-**Avant d'utiliser le programme, il faut compiler :
+Avant d'utiliser le programme, il faut compiler :
 
 ```sh
 $ make
@@ -28,7 +28,7 @@ Pour décompresser un fichier faite :
 ```sh
 $ huff -x INPUT OUTPUT
 ```
-avec INPUT et OUTPUT respectivement le fichier d'entré et de sortie.
+_avec INPUT et OUTPUT respectivement le fichier d'entré et de sortie._
 
 ## Archiveur en python
 ### Compression
@@ -37,7 +37,8 @@ Pour compresser un fichier faite :
 ```sh
 $ ./archiveur.py -c INPUT
 ```
-avec INPUT le fichier ou dossier d'entré.
+_avec INPUT le fichier ou dossier d'entré._
+
 La sortie portera le même nom suivi de ".huff" pour les fichiers et 
 "_huff" pour les dossiers.
 
@@ -47,9 +48,10 @@ Pour décompresser un fichier faite :
 ```sh
 $ ./archiveur.py -x INPUT
 ```
-avec INPUT le fichier ou dossier d'entré.
+_avec INPUT le fichier ou dossier d'entré._
+
 La sortie portera le même nom suivi de ".dec" pour les fichiers et 
-"_dec" pour les dossiers.
+"\_dec" pour les dossiers.
 
  
 
