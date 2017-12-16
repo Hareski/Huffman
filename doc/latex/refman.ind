@@ -1,0 +1,64 @@
+\begin{theindex}
+
+  \item {bit}
+    \subitem {Code}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Code}, \hyperpage{5}
+    \subitem {bit}, \hyperpage{5}
+  \item {compress.\+h}, \hyperpage{7}
+    \subitem {compression}, \hyperpage{8}
+  \item {compression}
+    \subitem {compress.\+h}, \hyperpage{8}
+
+  \indexspace
+
+  \item {decompress.\+h}, \hyperpage{9}
+    \subitem {decompression}, \hyperpage{10}
+  \item {decompression}
+    \subitem {decompress.\+h}, \hyperpage{10}
+
+  \indexspace
+
+  \item {frequency}
+    \subitem {header.\+h}, \hyperpage{12}
+
+  \indexspace
+
+  \item {get\+Header}
+    \subitem {header.\+h}, \hyperpage{12}
+
+  \indexspace
+
+  \item {header.\+h}, \hyperpage{10}
+    \subitem {frequency}, \hyperpage{12}
+    \subitem {get\+Header}, \hyperpage{12}
+    \subitem {save\+Header}, \hyperpage{13}
+    \subitem {tableau\+Huffmann}, \hyperpage{13}
+  \item {help}
+    \subitem {main.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\+c}, \hyperpage{15}
+  \item {main.\+c}, \hyperpage{14}
+    \subitem {help}, \hyperpage{15}
+    \subitem {main}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Noeud}, \hyperpage{5}
+
+  \indexspace
+
+  \item {save\+Header}
+    \subitem {header.\+h}, \hyperpage{13}
+
+  \indexspace
+
+  \item {tableau\+Huffmann}
+    \subitem {header.\+h}, \hyperpage{13}
+
+\end{theindex}

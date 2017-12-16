@@ -1,0 +1,65 @@
+\hypertarget{decompress_8h}{}\section{Référence du fichier decompress.\+h}
+\label{decompress_8h}\index{decompress.\+h@{decompress.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de decompress.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{decompress_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{decompress_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{decompress_8h_a3a294ccb5178e29b844001f7e04a078b}{decompression} (F\+I\+LE $\ast$input, F\+I\+LE $\ast$output, \hyperlink{structNoeud}{Noeud} $\ast$\hyperlink{header_8h_a755eccf14aa051a856c91938297836cd}{tableau\+Huffmann}, int nbr\+Char, int nbr\+A\+S\+C\+II)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Hareski 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16 décembre 2017 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{decompress_8h_a3a294ccb5178e29b844001f7e04a078b}\label{decompress_8h_a3a294ccb5178e29b844001f7e04a078b}} 
+\index{decompress.\+h@{decompress.\+h}!decompression@{decompression}}
+\index{decompression@{decompression}!decompress.\+h@{decompress.\+h}}
+\subsubsection{\texorpdfstring{decompression()}{decompression()}}
+{\footnotesize\ttfamily void decompression (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{input,  }\item[{F\+I\+LE $\ast$}]{output,  }\item[{\hyperlink{structNoeud}{Noeud} $\ast$}]{tableau\+Huffmann,  }\item[{int}]{nbr\+Char,  }\item[{int}]{nbr\+A\+S\+C\+II }\end{DoxyParamCaption})}
+
+
+
+Fonction de décompilation Huffman. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em input} & F\+I\+L\+E$\ast$\+: fichier à analyser au niveau de l\textquotesingle{}encodage \\
+\hline
+{\em output} & F\+I\+L\+E$\ast$\+: fichier pour l\textquotesingle{}extraction \\
+\hline
+{\em tableau\+Huffmann} & Noeud$\ast$ \+: tableau de Huffmann de l\textquotesingle{}index \\
+\hline
+{\em nbr\+Char} & int\+: nombre de caractéres dans input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}

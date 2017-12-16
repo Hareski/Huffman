@@ -1,0 +1,139 @@
+\hypertarget{header_8h}{}\section{Référence du fichier header.\+h}
+\label{header_8h}\index{header.\+h@{header.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Graphe des dépendances par inclusion de header.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{header_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{header_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNoeud}{Noeud}
+\item 
+struct \hyperlink{structCode}{Code}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \hyperlink{header_8h_a523c34b2f1368e288d98a5ad75136bd0}{frequency} (F\+I\+LE $\ast$input, int $\ast$nbr\+Char, int $\ast$nbr\+A\+S\+C\+II)
+\item 
+\hyperlink{structNoeud}{Noeud} $\ast$ \hyperlink{header_8h_a755eccf14aa051a856c91938297836cd}{tableau\+Huffmann} (double $\ast$freq\+Ascii)
+\item 
+\hyperlink{structCode}{Code} $\ast$ \hyperlink{header_8h_a8b873c7b4f8fc2bbcfe39c1f862cefde}{save\+Header} (F\+I\+LE $\ast$output, \hyperlink{structNoeud}{Noeud} $\ast$\hyperlink{header_8h_a755eccf14aa051a856c91938297836cd}{tableau\+Huffmann}, int nbr\+Char, int nbr\+A\+S\+C\+II)
+\item 
+\hyperlink{structNoeud}{Noeud} $\ast$ \hyperlink{header_8h_ab317cd8d11bcc3efa9ee09b26766313e}{get\+Header} (F\+I\+LE $\ast$input, int $\ast$nbr\+Char, int $\ast$nbr\+A\+S\+C\+II)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\begin{DoxyAuthor}{Auteur}
+Hareski 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16 décembre 2017 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{header_8h_a523c34b2f1368e288d98a5ad75136bd0}\label{header_8h_a523c34b2f1368e288d98a5ad75136bd0}} 
+\index{header.\+h@{header.\+h}!frequency@{frequency}}
+\index{frequency@{frequency}!header.\+h@{header.\+h}}
+\subsubsection{\texorpdfstring{frequency()}{frequency()}}
+{\footnotesize\ttfamily double$\ast$ frequency (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{input,  }\item[{int $\ast$}]{nbr\+Char,  }\item[{int $\ast$}]{nbr\+A\+S\+C\+II }\end{DoxyParamCaption})}
+
+
+
+Fonction de calcul de la fréquences d\textquotesingle{}A\+S\+C\+II Etendu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em input} & F\+I\+L\+E$\ast$\+: fichier à analyser \\
+\hline
+{\em nbr\+Char} & int\&\+: nombre de caractéres dans input \\
+\hline
+{\em nbr\+A\+S\+C\+II} & int\&\+: nombre de caractéres distinct dans input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{header_8h_ab317cd8d11bcc3efa9ee09b26766313e}\label{header_8h_ab317cd8d11bcc3efa9ee09b26766313e}} 
+\index{header.\+h@{header.\+h}!get\+Header@{get\+Header}}
+\index{get\+Header@{get\+Header}!header.\+h@{header.\+h}}
+\subsubsection{\texorpdfstring{get\+Header()}{getHeader()}}
+{\footnotesize\ttfamily \hyperlink{structNoeud}{Noeud}$\ast$ get\+Header (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{input,  }\item[{int $\ast$}]{nbr\+Char,  }\item[{int $\ast$}]{nbr\+A\+S\+C\+II }\end{DoxyParamCaption})}
+
+
+
+Fonction de récupération sur fichier d\textquotesingle{}arbre Huffman. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em input} & F\+I\+L\+E$\ast$\+: fichier de l\textquotesingle{}index \\
+\hline
+{\em nbr\+Char} & int$\ast$\+: nombre de caractéres dans input \\
+\hline
+{\em nbr\+A\+S\+C\+II} & int$\ast$\+: nombre de A\+S\+C\+II distinct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Noeud$\ast$ \+: tableau d\textquotesingle{}Huffmann 
+\end{DoxyReturn}
+\mbox{\Hypertarget{header_8h_a8b873c7b4f8fc2bbcfe39c1f862cefde}\label{header_8h_a8b873c7b4f8fc2bbcfe39c1f862cefde}} 
+\index{header.\+h@{header.\+h}!save\+Header@{save\+Header}}
+\index{save\+Header@{save\+Header}!header.\+h@{header.\+h}}
+\subsubsection{\texorpdfstring{save\+Header()}{saveHeader()}}
+{\footnotesize\ttfamily \hyperlink{structCode}{Code}$\ast$ save\+Header (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{output,  }\item[{\hyperlink{structNoeud}{Noeud} $\ast$}]{tableau\+Huffmann,  }\item[{int}]{nbr\+Char,  }\item[{int}]{nbr\+A\+S\+C\+II }\end{DoxyParamCaption})}
+
+
+
+Fonction de sauvegarde fichier et tableau d\textquotesingle{}arbre Huffman. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em output} & F\+I\+L\+E$\ast$\+: fichier pour l\textquotesingle{}index \\
+\hline
+{\em tableau\+Huffmann} & Noeud$\ast$ \+: tableau de Huffmann de l\textquotesingle{}index \\
+\hline
+{\em nbr\+Char} & int\+: nombre de caractéres dans input \\
+\hline
+{\em nbr\+A\+S\+C\+II} & int\+: nombre de A\+S\+C\+II distinct \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Code$\ast$ \+: tableau des codes A\+S\+C\+II selon l\textquotesingle{}arbre 
+\end{DoxyReturn}
+\mbox{\Hypertarget{header_8h_a755eccf14aa051a856c91938297836cd}\label{header_8h_a755eccf14aa051a856c91938297836cd}} 
+\index{header.\+h@{header.\+h}!tableau\+Huffmann@{tableau\+Huffmann}}
+\index{tableau\+Huffmann@{tableau\+Huffmann}!header.\+h@{header.\+h}}
+\subsubsection{\texorpdfstring{tableau\+Huffmann()}{tableauHuffmann()}}
+{\footnotesize\ttfamily \hyperlink{structNoeud}{Noeud}$\ast$ tableau\+Huffmann (\begin{DoxyParamCaption}\item[{double $\ast$}]{freq\+Ascii }\end{DoxyParamCaption})}
+
+
+
+Fonction de géneration d\textquotesingle{}arbre Huffman. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em tab\+A\+S\+C\+II} & double$\ast$ \+: frequences de chaque codage A\+S\+C\+II \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Noeud$\ast$ \+: arbre de compression et décompression 
+\end{DoxyReturn}

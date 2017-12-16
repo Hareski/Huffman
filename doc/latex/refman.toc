@@ -1,0 +1,34 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Index des classes}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Liste des classes}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Index des fichiers}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Liste des fichiers}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Documentation des classes}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}R\IeC {\'e}f\IeC {\'e}rence de la structure Code}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Description d\IeC {\'e}taill\IeC {\'e}e}{5}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Documentation des donn\IeC {\'e}es membres}{5}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}bit}{5}{subsubsection.3.1.2.1}
+\contentsline {section}{\numberline {3.2}R\IeC {\'e}f\IeC {\'e}rence de la structure Noeud}{5}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Description d\IeC {\'e}taill\IeC {\'e}e}{6}{subsection.3.2.1}
+\contentsline {chapter}{\numberline {4}Documentation des fichiers}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}R\IeC {\'e}f\IeC {\'e}rence du fichier compress.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Description d\IeC {\'e}taill\IeC {\'e}e}{8}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Documentation des fonctions}{8}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}compression()}{8}{subsubsection.4.1.2.1}
+\contentsline {section}{\numberline {4.2}R\IeC {\'e}f\IeC {\'e}rence du fichier decompress.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{9}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Description d\IeC {\'e}taill\IeC {\'e}e}{10}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Documentation des fonctions}{10}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}decompression()}{10}{subsubsection.4.2.2.1}
+\contentsline {section}{\numberline {4.3}R\IeC {\'e}f\IeC {\'e}rence du fichier header.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}h}{10}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Description d\IeC {\'e}taill\IeC {\'e}e}{12}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Documentation des fonctions}{12}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}frequency()}{12}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Header()}{12}{subsubsection.4.3.2.2}
+\contentsline {subsubsection}{\numberline {4.3.2.3}save\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Header()}{13}{subsubsection.4.3.2.3}
+\contentsline {subsubsection}{\numberline {4.3.2.4}tableau\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Huffmann()}{13}{subsubsection.4.3.2.4}
+\contentsline {section}{\numberline {4.4}R\IeC {\'e}f\IeC {\'e}rence du fichier main.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}c}{14}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Description d\IeC {\'e}taill\IeC {\'e}e}{14}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Documentation des fonctions}{15}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}help()}{15}{subsubsection.4.4.2.1}
+\contentsline {subsubsection}{\numberline {4.4.2.2}main()}{15}{subsubsection.4.4.2.2}
+\contentsline {chapter}{Index}{17}{section*.16}
