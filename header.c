@@ -1,19 +1,37 @@
 #include "header.h"
 
+void print(Noeud* tableauHuffmann){
+    printf("...\n");
+  for (size_t i = 0; i < 511; i++) {
+    if (tableauHuffmann[i].pere!=-1||tableauHuffmann[i].fg!=-1||tableauHuffmann[i].fd!=-1) {
+      printf("Noeud %ld : PERE[%d] FG[%d] FD[%d] de freq %f\n",i, tableauHuffmann[i].pere, tableauHuffmann[i].fg, tableauHuffmann[i].fd, tableauHuffmann[i].freq);
+    }
+  }
+  printf("...\n");
+}
+
+void printFreq(double* tabAscii){
+    printf("...\n");
+  for (int i = 0; i < 256; i++) {
+    printf("%c > %f\n", i,tabAscii[i] );
+  }
+  printf("...\n");
+}
+
 double* frequency(FILE* input, int* nbrChar, int* nbrASCII){
 
   // Allocation mémoire du tableau à retourner
-  double* tabAscii = (double*) malloc(256 * sizeof(double));
+  double* tabAscii = (double*) malloc(511 * sizeof(double));
   if (tabAscii != NULL){for (int i = 0; i < 256; i++) {tabAscii[i]=0.0;}}
   else{fprintf(stderr, "Le tableau n'a pu être généré. \n");return NULL;}
 
   // Lecture du fichier, modification du tableau à retourner et des paramètres
   unsigned char buffer[2]; *nbrChar = 0; *nbrASCII = 0;
   while (fread(buffer,1,1,input)) {
+    printf("%d\n",*buffer );
     if (tabAscii[(int) buffer[0]] == 0.0) {(*nbrASCII)++;}
     tabAscii[(int) buffer[0]] += 1;
     (*nbrChar)++;
-
   }
   // Division par le nombre de char pour obtenir la frequence et retour
   for (int i = 0; i < 256; i++) {tabAscii[i]/=(double) *nbrChar;}
@@ -23,7 +41,7 @@ double* frequency(FILE* input, int* nbrChar, int* nbrASCII){
 Noeud* tableauHuffmann(double* freqAscii){
 
   // Allocation mémoire du tableau
-  Noeud* tableauHuffmann = (Noeud*) malloc(600 * sizeof(Noeud));
+  Noeud* tableauHuffmann = (Noeud*) malloc(511 * sizeof(Noeud));
 
   if (tableauHuffmann != NULL){
     // Copie des valeurs de frequence de 0 à 255
@@ -87,7 +105,7 @@ Noeud* tableauHuffmann(double* freqAscii){
 }
 
  Code* saveHeader(FILE* output, Noeud* tableauHuffmann, int nbrChar, int nbrASCII){
-   fprintf(output, "%d|%d\n", nbrChar, nbrASCII);
+   fprintf(output, "%d|%d|", nbrChar, nbrASCII);
    int pivotTree, positionASCII = 0, bitBuffer, bitCode;
    unsigned char buffer[263], TEMP;
    Code* codes = (Code*) malloc (256 * sizeof(Code));
@@ -112,7 +130,7 @@ Noeud* tableauHuffmann(double* freqAscii){
        codes[positionASCII].code = (unsigned char*) malloc (codes[positionASCII].bit * sizeof(unsigned char));
        for (int i = 0; i < bitBuffer; i++) {codes[positionASCII].code[i]=buffer[bitBuffer-i-1];}
 
-       fprintf(output, "%c%d",positionASCII, codes[positionASCII].bit);
+       fprintf(output, "%c%c",positionASCII, (char)codes[positionASCII].bit);
        bitCode = 0;
        while (bitCode<codes[positionASCII].bit) {
          TEMP=0x0000;
@@ -129,13 +147,14 @@ Noeud* tableauHuffmann(double* freqAscii){
      }
      positionASCII++;
    }
+   print(tableauHuffmann);
    return codes;
  }
 
 Noeud* getHeader(FILE* input, int* nbrChar, int* nbrASCII){
 
   // Allocation mémoire du tableau
-  Noeud* tableauHuffmann = (Noeud*) malloc(600 * sizeof(Noeud));
+  Noeud* tableauHuffmann = (Noeud*) malloc(511 * sizeof(Noeud));
 
   if (tableauHuffmann != NULL){
     for (int i = 0; i < 511; i++) {
@@ -150,23 +169,23 @@ Noeud* getHeader(FILE* input, int* nbrChar, int* nbrASCII){
     return NULL;
   }
 
-  fscanf (input, "%u|%u", nbrChar,nbrASCII);
+  fscanf (input, "%d|%d|", nbrChar,nbrASCII);
 
-  int nbrASCIIGet=0, bitBuffer, pivotTree, bestFils = 256;
-  unsigned char charGet, TEMP;
+  int nbrASCIIGet=0, pivotTree, bestFils = 509;
+  unsigned char charGet, TEMP, bitBuffer;
 
   while (nbrASCIIGet<*nbrASCII) {
-    fscanf (input, "%c%d", &charGet,&bitBuffer);
+    fscanf (input, "%c%c", &charGet,&bitBuffer);
     pivotTree = 510;
-    while (bitBuffer>0) {
+    while ((unsigned int)bitBuffer>0) {
       fscanf (input, "%c", &TEMP);
       for (int i = 7; i >= 0; i--) {
-        if (bitBuffer>1) {
+        if ((unsigned int)bitBuffer>1) {
           if (TEMP & (0x0001<<i)) {
             if (tableauHuffmann[pivotTree].fd==-1) {
               tableauHuffmann[pivotTree].fd=bestFils;
               tableauHuffmann[bestFils].pere=pivotTree;
-              bestFils++;
+              bestFils--;
             }
             pivotTree=tableauHuffmann[pivotTree].fd;
             bitBuffer--;
@@ -175,20 +194,20 @@ Noeud* getHeader(FILE* input, int* nbrChar, int* nbrASCII){
             if (tableauHuffmann[pivotTree].fg==-1) {
               tableauHuffmann[pivotTree].fg=bestFils;
               tableauHuffmann[bestFils].pere=pivotTree;
-              bestFils++;
+              bestFils--;
             }
             pivotTree=tableauHuffmann[pivotTree].fg;
             bitBuffer--;
           }
         }
-        else if (bitBuffer==1){
+        else if ((unsigned int)bitBuffer==1){
           if (TEMP & (0x0001<<i)) {
             if (tableauHuffmann[pivotTree].fd==-1) {
               tableauHuffmann[pivotTree].fd=(int)charGet;
               tableauHuffmann[(int)charGet].pere=pivotTree;
               bitBuffer=0;
             }
-            else{fprintf(stderr, "Header error %d \n", __LINE__);}
+            else{fprintf(stderr, "Header error %d \n", __LINE__);bitBuffer=0;}
           }
           else{
             if (tableauHuffmann[pivotTree].fg==-1) {
@@ -196,13 +215,17 @@ Noeud* getHeader(FILE* input, int* nbrChar, int* nbrASCII){
               tableauHuffmann[(int)charGet].pere=pivotTree;
               bitBuffer=0;
             }
-            else{fprintf(stderr, "Header error %d \n", __LINE__);}
+            else{fprintf(stderr, "Header error %d \n", __LINE__);bitBuffer=0;}
           }
         }
-
+        if (bestFils<255) {
+          printf("error");
+          exit(1);
+        }
       }
     }
     nbrASCIIGet++;
   }
+  print(tableauHuffmann);
   return tableauHuffmann;
 }

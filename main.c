@@ -1,14 +1,24 @@
+/**
+ * \file main.c
+ * \brief Programme de Création d'index, compilation et décompilation Huffman.
+ * \author Hareski
+ * \version 1.1
+ * \date 16 décembre 2017
+ */
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "header.h"
 #include "compress.h"
 #include "decompress.h"
 
-/*/////////////////////////////////////////////////////////////////////////////
- * Nom :              help
- * Paramétres :       D exeName char* : nom de l'executable
- * Valeur retournée : void
- */////////////////////////////////////////////////////////////////////////////
+/**
+ * \fn void help(char* exeName)
+ * \brief Affiche l'aide.
+ *
+ * \param exeName char*: nom de l'executable
+ * \return void
+ */
 void help(char* exeName) {
   printf("Usage: %s MODE INPUT OUTPUT\n"
   " INPUT\n"
@@ -25,7 +35,14 @@ void help(char* exeName) {
   "                      if the usage is not respected\n",exeName);
 }
 
-
+/**
+ * \fn int main(int argc, char *argv[])
+ * \brief Entrée du programme.
+ *
+ * \param argc int: nombre de paramétres
+ * \param argv char**: paramétres
+ * \return 0[Arrêt normal du programme] ou int[Numéro erreur]
+ */
 int main(int argc, char *argv[]) {
 
   if (argc>1) {
@@ -44,6 +61,7 @@ int main(int argc, char *argv[]) {
       // Etapes de compression
       int nbrChar, nbrASCII;
       double* tabASCII = frequency(input, &nbrChar, &nbrASCII);
+      printf("%d et %d\n", nbrChar, nbrASCII);
       Noeud* huff = tableauHuffmann(tabASCII);
       Code* codes = saveHeader(output,huff,nbrChar,nbrASCII);
       rewind(input);
@@ -66,8 +84,8 @@ int main(int argc, char *argv[]) {
 
       // Etapes de compression
       int nbrChar, nbrASCII;
-        Noeud* huff = getHeader(input, &nbrChar, &nbrASCII);
-        decompression(input, output, huff, nbrChar, nbrASCII);
+      Noeud* huff = getHeader(input, &nbrChar, &nbrASCII);
+      decompression(input, output, huff, nbrChar, nbrASCII);
 
       // Fermeture fichiers
       fclose(input);

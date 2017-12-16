@@ -1,5 +1,8 @@
 all : main.o compress.o decompress.o header.o
-	gcc -Wall main.o compress.o decompress.o header.o -o Huffman; make clean
+	gcc -Wall main.o compress.o decompress.o header.o -o Huffman; make clean;
+
+debug : main.o compress.o decompress.o header.o
+	gcc -Wall main.c compress.c decompress.c header.c -O0 -g -o Huffman
 
 main.o : main.c compress.c decompress.c header.c
 	gcc -c main.c -o main.o
@@ -14,7 +17,7 @@ header.o :
 	gcc -c header.c -o header.o
 
 clean:
-	rm -rf *.o
+	rm -rf *.o c d
 
 mrproper: clean
 	rm -rf main

@@ -1,16 +1,25 @@
+/**
+ * \file compress.h
+ * \brief Fonction de compilation Huffman.
+ * \author Hareski
+ * \version 1.1
+ * \date 16 décembre 2017
+ */
 #ifndef COMPRESS_H
 #define COMPRESS_H
 #include <stdio.h>
 #include <stdlib.h>
 #include "header.h"
 
-/*/////////////////////////////////////////////////////////////////////////////
- * Nom :              compression
- * Paramétres :       D input FILE*: fichier à analyser au niveau de l'encodage
-                      R output FILE*: fichier pour la compression
-                      D codes Code*: codage des caractéres ASCII
- * Valeur retournée : void
- */////////////////////////////////////////////////////////////////////////////
-void compression(FILE*, FILE*, Code*);
+/**
+ * \fn void compression(FILE* input, FILE* output, Code* codes)
+ * \brief Fonction de compilation Huffman.
+ *
+ * \param input FILE*: fichier à analyser au niveau de l'encodage
+ * \param output FILE*: fichier pour la compression
+ * \param codes Code*: codage des caractéres ASCII
+ * \return void
+ */
+void compression(FILE* input, FILE* output, Code* codes);
 
 #endif
