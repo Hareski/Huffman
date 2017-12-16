@@ -35,7 +35,7 @@ avec INPUT et OUTPUT respectivement le fichier d'entré et de sortie.
 Pour compresser un fichier faite :
 
 ```sh
-$ huff -c INPUT
+$ ./archiveur.py -c INPUT
 ```
 avec INPUT le fichier ou dossier d'entré.
 La sortie portera le même nom suivi de ".huff" pour les fichiers et 
@@ -45,7 +45,7 @@ La sortie portera le même nom suivi de ".huff" pour les fichiers et
 Pour décompresser un fichier faite :
 
 ```sh
-$ huff -x INPUT
+$ ./archiveur.py -x INPUT
 ```
 avec INPUT le fichier ou dossier d'entré.
 La sortie portera le même nom suivi de ".dec" pour les fichiers et 
