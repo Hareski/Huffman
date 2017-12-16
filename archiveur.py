@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-import os, sys, re;
+import os, sys, re
+from subprocess import call # Permet de lancer le programme sans restriction
+                            # de longeur en sortie et en utilisant mieux les multi-processeurs
 
 def compress(input,output="NULL"):
     if output=="NULL":
         output=input
     if os.path.isfile(input):
-        file=os.popen("./Huffman -c "+input+" "+output+".huff", "r").read
+        call(["./huff", "-c", input, output+".huff"])
     else:
         if os.path.isdir(input):
             if not(os.path.isdir(input+"_huff")):
@@ -23,7 +25,7 @@ def decompress(input,output="NULL"):
     if output=="NULL":
         output=input
     if os.path.isfile(input):
-        file=os.popen("./Huffman -x "+input+" "+output+".dec", "r").read;
+        call(["./huff", "-x", input, output+".dec"])
     else:
         if os.path.isdir(input):
             if not(os.path.isdir(input+"_dec")):

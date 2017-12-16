@@ -61,11 +61,11 @@ int main(int argc, char *argv[]) {
       // Etapes de compression
       int nbrChar, nbrASCII;
       double* tabASCII = frequency(input, &nbrChar, &nbrASCII);
-      printf("%d et %d\n", nbrChar, nbrASCII);
       Noeud* huff = tableauHuffmann(tabASCII);
       Code* codes = saveHeader(output,huff,nbrChar,nbrASCII);
       rewind(input);
       compression(input, output, codes);
+      printf("Taille originelle : %ld octets; taille compressée : %ld octets; gain : %f \n",ftell(input),ftell(output),1.0-(float)ftell(output)/(float)ftell(input));
 
       // Fermeture fichiers
       fclose(input);
